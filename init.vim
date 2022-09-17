@@ -30,6 +30,7 @@ set noshowmode
 set ignorecase
 set smartcase
 set shortmess+=c
+let mapleader = " "
 
 noremap ; :
 nnoremap Q :q<CR>
@@ -52,7 +53,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/playground'
-
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -65,12 +65,12 @@ set expandtab
 set shiftwidth=2
 
 vmap <leader>f  <Plug>(coc-format-selected)
-nmap <C-t> :NERDTreeToggle<CR>
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
-nmap <C-p> :CocCommand prettier.formatFile<CR>
+nmap <leader>f  :CocCommand eslint.executeAutofix<CR>
+nmap <C-p> :Files<CR>
+nmap <leader>gi :diffget //3<CR>
+nmap <leader>gm :diffget //2<CR>
+nmap <leader>p :CocCommand prettier.formatFile<CR>
 nmap tt :CocCommand explorer<CR>
 
 colorscheme nord
-
 
